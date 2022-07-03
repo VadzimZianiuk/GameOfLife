@@ -1,25 +1,16 @@
-﻿using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
-
-namespace GameOfLife
+﻿namespace GameOfLife
 {
     class Cell
     {
-        public int PositionX { get; set; }
-        public int PositionY { get; set; }
         public int Age { get; set; }
-
         public bool IsAlive { get; set; }
+        public byte CountNeighbors { get; set; }
 
-
-        public Cell(int row, int column, int age, bool alive)
+        public void Clear()
         {
-            PositionX = row * 5;
-            PositionY = column * 5;
-            Age = age;
-            IsAlive = alive;
-            
+            Age = 0;
+            IsAlive = false;
+            CountNeighbors = 0;
         }
     }
 }
